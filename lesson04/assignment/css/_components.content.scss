@@ -1,0 +1,118 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+header {
+    background-image: url("../img/transparent-grass-clipart-3.png"), linear-gradient(to bottom, #73b8e9 0%,#357bcc 70%);
+    background-repeat: repeat-x;
+    background-size: 30rem;
+    background-position:bottom;
+}
+
+// Title Font
+@mixin title-font{
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    margin: 0;
+    text-align: center;
+    font-weight: 100;
+}
+
+//Setup the main title
+h1 {
+    @include title-font;
+    font-size: 12rem;
+    // Webkit approach to putting a color gradient on the text
+    background: -webkit-linear-gradient($red 40%, $blue 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2 {
+    @include title-font;
+    font-style: italic;
+    font-size: 4rem;
+    color: black;
+}
+
+//Navigation Bar Style
+nav {
+    background:$dark-green;
+    display: block;
+    // text-align: center;  // Aligns the menu to center of page, but causes the submenu to be misaligned
+    padding-left: 20%;  // Adding padding, but really want to center nav bar.
+    //Main Menu Items
+    ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+        display: inline-block;      
+        li {
+            width: 10em;
+            float:left;
+            position:relative;
+        }
+    }
+    a {
+        display:block;
+        padding:10px 20px;
+        text-align: center;
+        color:#fff;
+        border-left:1px solid $dark-gray;
+        text-decoration:none;
+        &:hover {
+            background:$hightlight-green;
+            border-radius: 15px;
+        }
+    }
+}
+
+// Styling for the dropdown submenu
+.submenu {
+    background:none;
+    position:absolute;
+    float: left;
+    li {
+        display:none;
+        background: $dark-gray;
+        z-index:1;
+    }
+    a {
+        //Override the border from the main menu
+        border: none;
+    }
+}
+
+
+// Flip down submenu animation
+//   Inspired by the class example and Fold Out style from
+//   https://www.newmediacampaigns.com/blog/nicer-navigation-with-css-transitions-part-2
+
+li:hover > .submenu > li {
+    display: block;
+    opacity: 0;
+        @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-name: menu1;
+        animation-duration: 300ms;
+        animation-delay: (300ms * $i) - 400;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        transform-origin: top center;
+      }
+      @keyframes menu1 {
+        0% {
+          opacity: 0;
+          -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform:perspective(400) rotate3d(0,0,0,0);
+        }
+      }
+    }
+  }
