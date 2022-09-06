@@ -1,0 +1,86 @@
+nav {
+    grid-area: Navbar; 
+    background:$dark-green;
+    height: fit-content;
+    // display: block;
+    // text-align: center;  // Aligns the menu to center of page, but causes the submenu to be misaligned
+    // padding-left: 20%;  // Adding padding, but really want to center nav bar.
+    //Main Menu Items
+    ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+        display: grid;  
+        grid-template-columns: repeat(4, auto);
+        // grid-gap: 10px;
+        justify-content: center;
+        justify-items: center;    
+        li {
+            font-family: gamesx;
+            font-size: 1.5rem;
+            width: 10em;
+            float:left;
+            position:relative;
+        }
+    }
+    a {
+        display:block;
+        padding:10px 20px;
+        text-align: center;
+        color:#fff;
+        border-left:1px solid $dark-gray;
+        text-decoration:none;
+        &:hover {
+            background:$hightlight-green;
+            border-radius: 15px;
+        }
+    }
+}
+
+// Styling for the dropdown submenu
+.submenu {
+    display: block;  // Need to set the submenu to block directly as it inherits the type from main ul
+    background:none;
+    position:absolute;
+    float: left;
+    li {
+        display:none;
+        // font-size: 1rem;
+        background: $dark-gray;
+        z-index:1;
+    }
+    a {
+        //Override the border from the main menu
+        border: none;
+    }
+}
+
+// Flip down submenu animation
+//   Inspired by the class example and Fold Out style from
+//   https://www.newmediacampaigns.com/blog/nicer-navigation-with-css-transitions-part-2
+
+li:hover > .submenu > li {
+    display: block;
+    opacity: 0;
+        @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-name: menu1;
+        animation-duration: 300ms;
+        animation-delay: (300ms * $i) - 400;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        transform-origin: top center;
+        transition-timing-function: ease-in-out;
+      }
+      @keyframes menu1 {
+        0% {
+          opacity: 0;
+          -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform:perspective(400) rotate3d(0,0,0,0);
+        }
+      }
+    }
+}
