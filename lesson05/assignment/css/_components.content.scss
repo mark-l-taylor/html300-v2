@@ -1,3 +1,5 @@
+// Main Content Styling
+
 html {
     box-sizing: border-box;
 }
@@ -8,6 +10,120 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    padding: 2rem;
+// Setup main body to use a grid layout, header, nav, content and footer
+body {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr auto auto 0.4fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Header"
+      "Navbar"
+      "Content"
+      "Footer"; 
+}
+
+// Headers used in the main content
+h3 {
+    font-family: gamesx;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2rem;
+    text-decoration: underline;
+    margin: 0 10%;
+}
+
+// Main Content section is Grid nested into the body grid, divides up into two sections aside/main
+.content {
+    margin: 2rem 10% 2rem 10%;
+    display: grid; 
+    grid-template-columns: 2fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: "Sidebar mainContent"; 
+    grid-area: Content;
+    @include media-query(desk){
+        grid-template-columns: 1fr 2fr;
+        aside {
+            display:flex;
+        }
+    } 
+}
+
+// aside content, using flexbox
+aside{
+    grid-area: Sidebar;
+    display: none;
+    flex-direction: column;
+    div {
+        align-self: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 5%;
+        width: 80%;
+        h4 {
+            font-family: arcade;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+        }
+        ol {
+            font-family: arcade;
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Main content, using flexbox
+main {
+    grid-area: mainContent;
+    display: flex;
+    flex-direction: column;
+    div {
+        align-self: center;
+        width: 80%;
+    }
+}
+
+// Game scorecard
+.game {
+    width:fit-content;
+    font-family: arcade;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    // border-width: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    td, th {
+        border: 1px solid #656565;
+        text-align: center;
+        padding: 8px;
+        margin: 10px;
+    }
+    // Set the header column 2-4 to blue
+    th:nth-child(1n+2) {
+        color: $blue;
+    }
+    // Set the header column 5-7 to red
+    th:nth-child(1n+5) {
+        color: $red;
+    }
+    // Set the values column 2-4 to blue
+    td:nth-child(1n+2) {
+        color: $blue;
+    }
+    // Set the values column 5-7 to red
+    td:nth-child(1n+5) {
+        color: $red;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .win {
+        text-decoration: underline;
+    }
 }
