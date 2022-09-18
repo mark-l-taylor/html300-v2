@@ -50,7 +50,7 @@ h3 {
 }
 // Main Content section is Grid nested into the body grid, divides up into two sections aside/main
 .single_content {
-    margin: 2rem 10% 2rem 10%;
+    margin: 2rem 5% 2rem 5%;
 }
 
 // aside content, using flexbox
@@ -98,7 +98,7 @@ main {
 .game {
     width:fit-content;
     font-family: arcade;
-    font-size: 1.5rem;
+    font-size: .25 rem;
     padding: 10px;
     margin: 10px;
     // border-width: 5px;
@@ -140,4 +140,9 @@ main {
         background-color: $hightlight-green;
         border-color: $dark-green;
     }
+}
+
+.player_card{
+    max-width: 20rem;
+    width: 80%;
 }
