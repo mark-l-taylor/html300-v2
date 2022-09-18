@@ -133,6 +133,7 @@ main {
     }
 }
 
+// Updating the bootstrap button class to site colors
 .btn-primary {
     background-color: $dark-green;
     border-color: $hightlight-green;
@@ -142,6 +143,7 @@ main {
     }
 }
 
+// Update the player card to scale with page, results in responsive profile images.
 .player_card{
     max-width: 20rem;
     width: 80%;
