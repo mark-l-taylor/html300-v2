@@ -1,1 +1,25 @@
 // Colors
+$dark-gray: #525252;
+$background-gray: rgb(211, 211, 211);
+$red:#bd1b1b;
+$blue:#071898;
+$dark-green: #024d08;
+$hightlight-green: #2e9637;
+
+@font-face {
+    // https://www.fontspace.com/games-font-f27973
+    font-family: 'gamesx';
+    src: url('fonts/GamesXvD2.ttf');
+}
+
+@font-face {
+    // https://www.1001fonts.com/blox-brk-font.html
+    font-family: 'bloxbrk';
+    src: url('fonts/bloxbrk.regular.ttf');
+}
+
+@font-face {
+    // https://www.urbanfonts.com/fonts/Arcade.htm
+    font-family: 'arcade';
+    src: url('fonts/ARCADE.ttf');
+}

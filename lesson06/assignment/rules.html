@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- Original Class example, this did not support the dropdown on Nav bar -->
+        <!--
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+         -->
+
+
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- Using the bootstrap 5 with the bundle js which includes popper.min.js -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+        <!-- Style sheet to augment the bootstrap classes -->
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Assignment 06 - Bootstrap 4</title>
+    </head>
+    <body>
+        <header>
+            <h1>ScOrE MoRe</h1>
+            <h2>THE BACKYARD SCOREBOARD</h2>
+        </header>
+        
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <!-- <a class="navbar-nav" href="#">Navbar</a> -->
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navbarNav" class="collapse	navbar-collapse">
+                <ul	class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                    <li	class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Games</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"> Cornhole </a>
+                            <a class="dropdown-item" href="#"> Horseshoes </a>
+                        </div>
+                    </li>
+                    <li	class="nav-item active"><a class="nav-link" href="players.html">Players</a></li>
+                    <li	class="nav-item active"><a class="nav-link" href="scores.html">Scores</a></li>
+                    <li	class="nav-item active"><a class="nav-link" href="rules.html">Rules</a></li>
+                    <li	class="nav-item active"><a class="nav-link" href="#">How To</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="single_content">
+            <h3 class="text-center">Rules</h3>
+            <div class="accordion single_content" id="accordionRules">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h3 class="mb-0">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Cornhole
+                        </button>
+                    </h3>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRules">
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">
+                                <h4>Cornhole Game Play</h4>
+                            <ol>
+                                <li>Two teams of two people, termed partners, shall play. Partners shall stand at opposite cornhole boxes on the same side, from the perspective of a third person, and face each other, so there is no advantage given to one team.</li>
+                                <li>Each cornhole team shall have 4 bags of one color.</li>
+                                <li>All 8 cornhole bags begin at one end.</li>
+                                <li>A coin flip shall determine which cornhole team has honors in round one.</li>
+                                <li>One of the partners on the team who has honors shall begin play by throwing a cornhole bag at the opposite cornhole box.</li>
+                                <li>A cornhole player may throw from anywhere behind the front of the cornhole box they are throwing from.</li>
+                                <li>Game continues by alternating throws between the two opponent players until all 8 cornhole bags have been thrown.</li>
+                                <li>If a cornhole bag hits the ground then bounces up onto the board, that bag shall be taken off the playing surface.</li>
+                                <li>The next round starts when the other cornhole player on the team, which has honors, throws their first cornhole bag.</li>
+                                <li>The cornhole game continues until one team reaches 21 or more points.</li>
+                            </ol>
+                            <h4>Cornhole Game Scoring</h4>
+                            <ol> 
+                                <li>The score shall be taken after all cornhole bags have been thrown for a round.</li>
+                                <li>Points shall be given as follows.</li>
+                                    3 points for a cornhole bag that goes through the hole.
+                                    1 point for a cornhole bag that is on the playing surface.
+                                    1 point for a cornhole bag that is hanging into the hole.
+                                    1 point for a cornhole bag that is hanging off the edge but not touching the ground.
+                                    0 points for a cornhole bag that is on the playing surface, but also touching the ground.
+                                    0 points for a cornhole bag that is hanging off the front edge and is resting on a cornhole bag that is on the ground (unless the cornhole bag on the ground can be removed without making the hanging bag fall to the ground, then one point is given).
+                                <li>The cornhole team with the highest round score, adds the difference of the two scores to their game score.</li>
+                                <li>The cornhole team who wins the round is given honors to throw first in the next round.</li>
+                                <li>If both cornhole teams have the same round score then the game score stays the same and honors stays with the team who had it the previous round.</li>
+                            </ol>
+                            <h4>Cornhole Game Fouls</h4>
+                            <ol>
+                                <li>A foul occurs when any of the following happens.</li>
+                                <li>A cornhole players foot goes past the foot foul line, termed a foot foul.</li>
+                                <li>A player goes out of turn.</li>
+                                <li>The player who caused the foul loses the throw when the foul occurred and the bag shall be removed if it landed on the playing surface.</li>
+                            </ol>
+
+                            </p>
+                            <p class="blockquote-footer text-right">
+                                <cite title="Source Link">
+                                    <a href="https://www.cornholeworldwide.com/play-cornhole/cornhole-rules/">Cornhole Worldwide</a>
+                                </cite>
+                            </p>
+                        </blockquote>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                    <h3 class="mb-0">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Horseshoes
+                        </button>
+                    </h3>
+                    </div>
+                
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRules">
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p class="mb-0">
+                                A coin is tossed to decide who starts and thereafter the player to pitch first alternates with the end. Throws must be underarm. The first player
+                                throws both horseshoes at the opposite stake one after the other. The second player then does the same thing. The score for the end is then 
+                                calculated and the players play the next end by reversing direction and throwing at the other stake.
+                            </p>
+                            <p>
+                                Any horseshoe that completely surrounds the stake is called a "ringer" and scores three points unless cancelled out by an opponents ringer. If
+                                there is some doubt as to whether or not a horseshoe qualifies as a ringer, a straight edge should be placed against the open end of the horseshoe.
+                                If straight edge doesn't touch the stake, a ringer is scored. For such a simple game the scoring can seem complicated because of the way that 
+                                ringers are cancelled out. To desimplify this, the various options are listed below:
+                            </p>    
+                            <ol>
+                                <li>If no ringers are thrown, the nearest horseshoe to the stake counts one point.</li>
+                                <li>If both players throw a single ringer each, the ringers are cancelled out and the nearest of the other two horseshoes scores one point.</li>
+                                <li>Should both players score two ringers each, they cancel each other out and no points are scored.</li>
+                                <li>If one player manages one ringer but the other player pitches two ringers, three points are scored.</li>
+                                <li>If a single ringer has been scored that player wins three points plus an extra point if that player's other horseshoe is the closest of the remaining three.</li>
+                                <li>Finally, if a player achieves two ringers and the other player manages none, six points are scored.</li>
+                            </ol>
+                            <p>
+                                The first player to reach 21 points wins the game.
+                            </p>
+                            <p>
+                                Note - shoes that lean against the stake are not counted nearer than any other shoe that touches the stake.
+                            </p>
+                            <p class="blockquote-footer text-right">
+                                <cite title="Source Link">
+                                    <a href="https://www.mastersofgames.com/rules/horseshoe-pitching-rules.htm">Master of Games</a>
+                                </cite>
+                            </p>
+                        </blockquote>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <p>Score More</p>
+            <p>Page Created by: Mark Taylor</p>
+        </footer>
+    </body>
+</html>

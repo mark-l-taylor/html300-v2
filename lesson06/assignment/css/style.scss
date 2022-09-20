@@ -1,6 +1,10 @@
 // Import partials here
+// @import "../node_modules/bootstrap/scss/bootstrap";
 @import 'base.normalize';
 @import 'settings.variables';
 @import 'settings.responsive';
 @import 'components.content';
-
+@import 'components.nav';
+@import 'components.header';
+@import 'components.footer';
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&display=swap');
