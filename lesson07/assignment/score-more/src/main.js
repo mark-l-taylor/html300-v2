@@ -5,7 +5,7 @@ import Vue from 'vue'
 import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import 'bootstrap';
+import 'bootstrap'
 // Make BootstrapVue available throughout your project
 // Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
@@ -21,6 +21,8 @@ import SM_Players from './views/SM_Players.vue'
 import SM_Scores from './views/SM_Scores.vue'
 import SM_Rules from './views/SM_Rules.vue'
 import SM_Howto from './views/SM_Howto.vue'
+import SM_Cornhole from './views/SM_Cornhole.vue'
+import SM_Horseshoes from './views/SM_Horseshoes.vue'
 
 Vue.config.productionTip = false
 
@@ -35,6 +37,8 @@ const routes = [
   { path: '/scores', name:'Scores', component: SM_Scores},
   { path: '/rules', name:'Rules', component: SM_Rules},
   { path: '/howto', name:'Howto', component: SM_Howto},
+  { path: '/cornhole', name:'Cornhole', component: SM_Cornhole},
+  { path: '/horseshoes', name:'Horseshoes', component: SM_Horseshoes},
   { path: '/', name: 'Home', component: SM_Home},
 ]
 
