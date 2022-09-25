@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer id="Footer">
         <p>Score More</p>
         <p>Page Created by: Mark Taylor</p>
     </footer>

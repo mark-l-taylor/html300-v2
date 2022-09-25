@@ -10,17 +10,19 @@ html {
     box-sizing: inherit;
 }
 
-// Setup main body to use a grid layout, header, nav, content and footer
-body {
+// Setup #app to use a grid layout, header, nav, content and footer
+#app {
     display: grid; 
     grid-template-columns: 1fr; 
-    grid-template-rows: 1fr auto auto 0.4fr; 
+    grid-template-rows: auto auto auto auto; 
     gap: 0px 0px; 
     grid-template-areas: 
       "Header"
       "Navbar"
       "Content"
-      "Footer"; 
+      "Footer";
+    // Ensure that the app takes up the whole browser
+    min-height: 100vh;
 }
 
 // Headers used in the main content
@@ -48,9 +50,13 @@ h3 {
         }
     } 
 }
-// Main Content section is Grid nested into the body grid, divides up into two sections aside/main
+
+// Single Content does not use grid, displays as a standard container
 .single_content {
     margin: 2rem 5% 2rem 5%;
+    // min-height: calc(100vh - 8rem - 18rem - 3.25rem);
+    // min-height: 100vh;    
+    overflow: auto;
 }
 
 // aside content, using flexbox
@@ -96,13 +102,67 @@ main {
 
 // Game scorecard
 .game {
-    width:fit-content;
+    min-width: fit-content;
+    max-width: fit-content;
     font-family: arcade;
     font-size: .25 rem;
     padding: 10px;
     margin: 10px;
     // border-width: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    // Formatting for Summary Header of Score Card
+    .summary{
+        display: grid;
+        grid-template-columns: 50% 25% 25%; 
+        grid-template-rows: auto auto auto; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "timestamp score-headerB score-headerR"
+          "weather scores-blue scores-red";
+        .timestamp {
+            grid-area: timestamp;
+            margin: 0rem;
+            font-size: 1rem;
+        }
+        .score-headerB {
+            grid-area: score-headerB;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0rem;
+            color: $blue;
+
+        }
+        .score-headerR {
+            grid-area: score-headerR;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0rem;
+            color: $red;
+        }
+
+        .weather {
+            grid-area: weather;
+        }
+        .scores-blue {
+            grid-area: scores-blue;
+            color: $blue;
+            font-size: 4rem;
+            text-align: center;
+            margin: 5px;
+            border: solid 3px $dark-gray;
+        }
+        .scores-red {
+            grid-area: scores-red;
+            color: $red;
+            font-size: 4rem;
+            text-align: center;
+            margin: 5px;
+            border: solid 3px $dark-gray;
+        }
+    }
+
+    // Table Formating for score card
     td, th {
         border: 1px solid #656565;
         text-align: center;
@@ -131,6 +191,7 @@ main {
     .win {
         text-decoration: underline;
     }
+
 }
 
 // Updating the bootstrap button class to site colors

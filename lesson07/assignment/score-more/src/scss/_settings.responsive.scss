@@ -40,7 +40,7 @@ $breakpoints: (
     "desk"          "screen and (min-width: 1024px)",
     "lg"            "screen and (min-width: 920px)",
     "tab"           "screen and (min-width: 768px)",
-    "mobile"        "screen and (max-width: 767px)",
+    "mobile"        "screen and (min-width: 767px)",
     "infograph"     "screen and (min-width: 540px)",
     "med"           "screen and (min-width: 40em)",
     "sm"            "screen and (min-width: 30em)",

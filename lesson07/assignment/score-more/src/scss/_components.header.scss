@@ -10,7 +10,7 @@
 
 header { 
     // Setup the header size, background image and color
-    height: 18rem;
+    // height: 18rem;
     grid-area: Header;
     background-image: url("../assets/transparent-grass-clipart-3.png");
     background-color: #357bcc;
@@ -18,31 +18,34 @@ header {
     background-size: 195px 184.8px; //Use a reduced image size on the grass
     background-repeat: repeat-x; //Repeat the grass to go across entire screen
     background-position:bottom;
-    //Setup the main title
+    //Setup the main title based on mobile layout
     h1 {
         @include title-font;
-        font-size: 6rem;
-        // margin: 2rem;
+        font-size: 3.5rem;
+        margin: 2rem auto 2rem auto;
         // Webkit approach to putting a color gradient on the text
         background: -webkit-linear-gradient($red 40%, $blue 70%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     h2 {
-        @include title-font;
-        margin: 2rem;
-        font-size: 2rem;
+        @include title-font;        
+        font-size: 1rem;
+        margin: 2rem auto 4rem auto;
         color: black;
+        display: none;
     } 
 
-    // Adjust the title font size to avoid bleed over of text on smaller displays
+    // Adjust the title font size for screens larger than mobile
     @include media-query(mobile){
-        height: 15rem;
+        // height: 15rem;
         h1 {
-            font-size: 4rem;
+            margin: 5rem auto 1rem auto;
+            font-size: 6rem;
         }
         h2 {
-            font-size: 1rem;
+            display: block;
+            font-size: 2rem;
         }
     } 
 }
