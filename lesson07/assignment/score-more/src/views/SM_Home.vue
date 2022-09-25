@@ -2,22 +2,10 @@
         <div class="content">
             <aside>
                 <h3>Leader Boards</h3>
-                <div>
-                    <h4>Most Wins</h4>
+                <div :key="stat" v-for="stat in stats">
+                    <h4>{{stat.title}}</h4>
                     <ol>
-                        <li><a href="#">Mark Taylor</a></li>
-                        <li><a href="#">Juan Ceja</a></li>
-                        <li><a href="#">Jes Kheler</a></li>
-                        <li><a href="#">Abbey Ceja</a></li>
-                    </ol>
-                </div>
-                <div>
-                    <h4>Average Points Per Round</h4>
-                    <ol>
-                        <li><a href="#">Juan Ceja</a></li>
-                        <li><a href="#">Mark Taylor</a></li>
-                        <li><a href="#">Jes Kheler</a></li>
-                        <li><a href="#">Abbey Ceja</a></li>
+                        <li :key="player" v-for="player in stat.data"><a href="#">{{player}}</a></li>
                     </ol>
                 </div>
             </aside>
@@ -26,85 +14,29 @@
                 <p>Welcome to Score More, your backyard digital scoreboard.  Ejoy playing with friends and family
                     as you easily keep track of all your backyard competitions!
                 </p>
-                <h3>Recent Games</h3>
-                <div class="game">
-                    <p>7/20/2022 5:45pm</p>
-                    <img src="" alt="">
-                    <table>
-                        <tr>
-                            <th>Round</th>
-                            <th>Mark</th>
-                            <th>Juan</th>
-                            <th>Points</th>
-                            <th>Jes</th>
-                            <th>Abbey</th>
-                            <th>Points</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="win">6</td>
-                            <td>-</td>
-                            <td>2</td>
-                            <td>4</td>
-                            <td>-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>-</td>
-                            <td class="win">3</td>
-                            <td>4</td>
-                            <td>-</td>
-                            <td>1</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td class="win">5</td>
-                            <td>-</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>-</td>
-                            <td>6</td>
-                            <td>4</td>
-                            <td>-</td>
-                            <td class="win">8</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td class="win">3</td>
-                            <td>-</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>-</td>
-                            <td class="win">6</td>
-                            <td>6</td>
-                            <td>-</td>
-                            <td>4</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td class="win">8</td>
-                            <td>-</td>
-                            <td>8</td>
-                            <td>6</td>
-                            <td>-</td>
-                            <td>4</td>
-                        </tr>
-                    </table>
-                </div>
+                <h3>Recent Game</h3>
+                <SM_score_card :score = "recent_game" :score_id = "1"></SM_score_card>
             </main>
         </div>
 </template>
+
+<script>
+import SM_score_card from '../components/SM_score_card.vue'
+
+
+export default {
+    components: {
+    SM_score_card,
+},
+
+    data () {
+    return {
+        recent_game: {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[21,4]},
+        stats: [
+                {title: "Most Wins", data: ["Mark Taylor", "Juan Ceja", "Jes Kehler", "Abbey Ceja"]},
+                {title: "Average Points per Round", data: ["Juan Ceja", "Mark Taylor", "Jes Kehler", "Abbey Ceja"]},
+                ],
+    }
+    },
+}
+</script>

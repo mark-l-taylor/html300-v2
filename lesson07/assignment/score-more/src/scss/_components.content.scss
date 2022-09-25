@@ -64,11 +64,11 @@ aside{
     grid-area: Sidebar;
     display: none;
     flex-direction: column;
-    margin: 0 10%;
+    // margin: 0 10%;
     div {
-        align-self: center;
+        // align-self: center;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        margin: 5%;
+        margin: 5% 0% 5% 0% ;
         width: 80%;
         h4 {
             font-family: arcade;
@@ -93,16 +93,12 @@ main {
     grid-area: mainContent;
     display: flex;
     flex-direction: column;
-    margin: 0 10%;
-    div {
-        align-self: center;
-        width: 80%;
-    }
+    // margin: 0 10%;
 }
 
 // Game scorecard
 .game {
-    min-width: fit-content;
+    min-width: 20rem;
     max-width: fit-content;
     font-family: arcade;
     font-size: .25 rem;
@@ -162,6 +158,9 @@ main {
         }
     }
 
+    table {
+        margin: 0rem auto 0rem auto;
+    }
     // Table Formating for score card
     td, th {
         border: 1px solid #656565;

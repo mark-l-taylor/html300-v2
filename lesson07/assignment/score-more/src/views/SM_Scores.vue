@@ -10,9 +10,11 @@
 <template>
      <div class="single_content">
             <h3 class="text-center">Scores</h3>
-            <div class="container">
-                <div :key="score.date" v-for="score in scores" class="row d-flex justify-content-center">
-                    <SM_score_card :score = "score"></SM_score_card>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div :key="index" v-for="(score, index) in scores" class="">
+                    <!-- <div class="col-xl-3 col-lg-6 col-sm-12 col-12"> -->
+                        <SM_score_card :score = "score" :score_id = "index"></SM_score_card>
+                    <!-- </div> -->
                 </div>
             </div>
     </div>
@@ -36,6 +38,11 @@ export default {
             {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
             {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
             {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
+            {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
+            {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
+            {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
+            {date: "7/20/2022 5:45pm", players: {blue: ['Mark','Juan'], red: ['Jes', 'Abbey']}, points: {blue:[6,3,4,6,2,6,8], red:[4,1,5,8,3,4,6]}, final:[8,4]},
+
         ],
     }
     },
