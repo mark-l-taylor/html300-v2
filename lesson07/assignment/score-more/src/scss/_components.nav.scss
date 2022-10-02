@@ -1,0 +1,50 @@
+// Navigation styling with Bootstrap
+//      styling with css using the bootstrap classes
+
+//Update the navbar to have the background dark green
+.navbar {
+    background-color:$dark-green;
+    // height: 3.25rem;
+}
+
+// Move the content to be centered
+.navbar-collapse {
+    justify-content: center;
+}
+
+// Style the nav links
+.nav-link {
+    display:block;
+    font-family: gamesx;
+    font-size: 1.5rem;
+    color: white;
+    // padding:5px 30px;
+    width: 10em;
+    text-align: center;
+    border-left:1px solid $dark-gray;
+    text-decoration:none;
+    &:hover {
+        background:$hightlight-green;
+        border-radius: 15px;
+    }
+}
+
+// Styling of the nav dropdown menu
+.dropdown-menu {
+    background-color:$dark-green;
+}
+
+.dropdown-item {
+    font-family: gamesx;
+    font-size: 1.5rem;
+    color: white;
+    width: 10em;
+    text-align: center;
+    border-left:1px solid $dark-gray;
+    text-decoration:none;
+    &:hover {
+        background:$hightlight-green;
+        border-radius: 15px;
+        color: white;
+    }
+}
