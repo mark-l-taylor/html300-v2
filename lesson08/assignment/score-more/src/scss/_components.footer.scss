@@ -1,0 +1,11 @@
+// Footer Styling
+footer {
+    grid-area: Footer;
+    background:$dark-green;
+    text-align: center;
+    p {
+        font-family: gamesx;
+        color: white;
+    }
+    // height: 500px;
+}

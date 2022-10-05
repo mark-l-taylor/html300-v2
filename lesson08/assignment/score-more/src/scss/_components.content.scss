@@ -1,0 +1,210 @@
+// Main Content Styling
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+// Setup #app to use a grid layout, header, nav, content and footer
+#app {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Header"
+      "Navbar"
+      "Content"
+      "Footer";
+    // Ensure that the app takes up the whole browser
+    min-height: 100vh;
+}
+
+// Headers used in the main content
+h3 {
+    font-family: gamesx;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+// Main Content section is Grid nested into the body grid, divides up into two sections aside/main
+.content {
+    margin: 2rem 10% 2rem 10%;
+    display: grid; 
+    grid-template-columns: 2fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: "Sidebar mainContent"; 
+    grid-area: Content;
+    @include media-query(desk){
+        grid-template-columns: 1fr 2fr;
+        aside {
+            display:flex;
+        }
+    } 
+}
+
+// Single Content does not use grid, displays as a standard container
+.single_content {
+    margin: 2rem 5% 2rem 5%;
+    // min-height: calc(100vh - 8rem - 18rem - 3.25rem);
+    // min-height: 100vh;    
+    overflow: auto;
+}
+
+// aside content, using flexbox
+aside{
+    grid-area: Sidebar;
+    display: none;
+    flex-direction: column;
+    // margin: 0 10%;
+    div {
+        // align-self: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 5% 0% 5% 0% ;
+        width: 80%;
+        h4 {
+            font-family: arcade;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+        }
+        ol {
+            font-family: arcade;
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Main content, using flexbox
+main {
+    grid-area: mainContent;
+    display: flex;
+    flex-direction: column;
+    // margin: 0 10%;
+}
+
+// Game scorecard
+.game {
+    min-width: 20rem;
+    max-width: fit-content;
+    font-family: arcade;
+    font-size: .25 rem;
+    padding: 10px;
+    margin: 10px;
+    // border-width: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    // Formatting for Summary Header of Score Card
+    .summary{
+        display: grid;
+        grid-template-columns: 50% 25% 25%; 
+        grid-template-rows: auto auto auto; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "timestamp score-headerB score-headerR"
+          "weather scores-blue scores-red";
+        .timestamp {
+            grid-area: timestamp;
+            margin: 0rem;
+            font-size: 1rem;
+        }
+        .score-headerB {
+            grid-area: score-headerB;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0rem;
+            color: $blue;
+
+        }
+        .score-headerR {
+            grid-area: score-headerR;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0rem;
+            color: $red;
+        }
+
+        .weather {
+            grid-area: weather;
+        }
+        .scores-blue {
+            grid-area: scores-blue;
+            color: $blue;
+            font-size: 4rem;
+            text-align: center;
+            margin: 5px;
+            border: solid 3px $dark-gray;
+        }
+        .scores-red {
+            grid-area: scores-red;
+            color: $red;
+            font-size: 4rem;
+            text-align: center;
+            margin: 5px;
+            border: solid 3px $dark-gray;
+        }
+    }
+
+    table {
+        margin: 0rem auto 0rem auto;
+    }
+    // Table Formating for score card
+    td, th {
+        border: 1px solid #656565;
+        text-align: center;
+        padding: 8px;
+        margin: 10px;
+    }
+    // Set the header column 2-4 to blue
+    th:nth-child(1n+2) {
+        color: $blue;
+    }
+    // Set the header column 5-7 to red
+    th:nth-child(1n+5) {
+        color: $red;
+    }
+    // Set the values column 2-4 to blue
+    td:nth-child(1n+2) {
+        color: $blue;
+    }
+    // Set the values column 5-7 to red
+    td:nth-child(1n+5) {
+        color: $red;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .win {
+        text-decoration: underline;
+    }
+
+}
+
+// Updating the bootstrap button class to site colors
+.btn-primary {
+    background-color: $dark-green;
+    border-color: $hightlight-green;
+    &:hover{
+        background-color: $hightlight-green;
+        border-color: $dark-green;
+    }
+}
+
+// Update the player card to scale with page, results in responsive profile images.
+.player_card{
+    max-width: 20rem;
+    width: 80%;
+}
